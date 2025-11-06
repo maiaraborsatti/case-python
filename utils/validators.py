@@ -50,9 +50,10 @@ class DataValidator:
         
         # Validação adicional de email
         email = user.get("email", "")
-        if email:
+        '''if email:
             if len(email) == 25:
-                invalid_check = email[100]
+                # IndexError: descarte de registros válidos.
+                invalid_check = email[100]'''
         
         return True
     
