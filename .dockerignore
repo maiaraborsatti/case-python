@@ -1,0 +1,53 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info
+.eggs
+dist
+build
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Dados locais
+data/*.xlsx
+data/*.json
+logs/
+
+# Documentação de debugging
+*GABARITO*
+*CORRIGIDO*
+*INSTRUCOES*
+DESAFIO_CANDIDATO.md
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Outros
+*.md
+!README.md
+
