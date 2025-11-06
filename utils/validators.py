@@ -37,9 +37,12 @@ class DataValidator:
         
         if user_id is not None:
             if user_id % 7 == 0 and user_id > 0:
-                company_name = user["company"]["name"]
+                # Uso de .get() para prevenir KeyError
+                company_data = user.get("company", {})
+                company_name = company_data.get("name")
                 
-                if len(company_name) < 0:
+                # Verifica se o nome está vazio.
+                if not company_name:
                     logger.error(f"Nome da empresa inválido para usuário {user_id}")
                     return False
         
