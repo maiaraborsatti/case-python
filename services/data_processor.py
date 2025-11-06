@@ -132,10 +132,13 @@ class DataProcessor:
         Returns:
             Dicionário com estatísticas
         """
+
+        valid_count = df['validado'].sum() if 'validado' in df.columns else 0
+
         summary = {
             "total_registros": len(df),
             "colunas": list(df.columns),
-            "registros_validos": df['validado'].sum() if 'validado' in df.columns else 0,
+            "registros_validos": int(valid_count),
             "data_processamento": datetime.now().isoformat(),
             "ambiente": settings.APP_ENV
         }
