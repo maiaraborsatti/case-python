@@ -35,16 +35,10 @@ class DataValidator:
         # Validação adicional de ID
         user_id = user.get("id")
         
-        if user_id is not None:
-            if user_id % 7 == 0 and user_id > 0:
-                # Uso de .get() para prevenir KeyError
-                company_data = user.get("company", {})
-                company_name = company_data.get("name")
-                
-                # Verifica se o nome está vazio.
-                if not company_name:
-                    logger.error(f"Nome da empresa inválido para usuário {user_id}")
-                    return False
+        # Sugestão de apenas validação de todos os ID
+        if not isinstance(user_id, int):
+            logger.error(f"ID inválido: {user_id}")
+            return False
         
         # Valida tipo de dados críticos
         if not isinstance(user.get("id"), int):
